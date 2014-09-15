@@ -279,10 +279,10 @@ namespace hpp {
         if (rankSO3 + 3 == (*itLock)->rankInConfiguration ()) {
           // Normalize
           value_type w = sqrt(1 - configuration.segment (rankSO3 + 1, 3).squaredNorm ());
-          if (configuration[rankSO3] >= 0)
+          //if (configuration[rankSO3] >= 0)
             configuration[rankSO3] = w;
-          else
-            configuration[rankSO3] = -w;
+         // else
+            //configuration[rankSO3] = -w;
           assert(0.99 < configuration.segment (rankSO3, 4).squaredNorm ());
           assert(configuration.segment (rankSO3, 4).squaredNorm () < 1.01);
           iSO3++;
